@@ -34,7 +34,7 @@ public class CommonResident : InhabitantBase
     }
     public void AppCoin(Coin coin)
     {
-        coin.CanApp(_wallet);
+        coin.App(_wallet);
     }
 
     private void SetupBehaviorTree()

@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
     public void AppCoin(Coin coin)
     {
-        coin.CanAppPlayer(_wallet);
+        coin.App(_wallet);
     }
 
 
