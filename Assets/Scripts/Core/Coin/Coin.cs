@@ -53,7 +53,6 @@ public class Coin : MonoBehaviour
     {
         if (wallet.IsMaxCoin == false)
         {
-            Debug.Log("лллллллллл" + wallet.IsMaxCoin);
             StopAllCoroutines();
             wallet.AddCoin();
             Destroy(gameObject);

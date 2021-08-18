@@ -18,7 +18,6 @@ public class CommonResident : InhabitantBase
 
         _collisionHandler = GetComponent<ResidentCollisionHandler>();
 
-        _collisionHandler.CoinCollision.Notification += AppCoin;
         _collisionHandler.VacanceCollisison.Notification += GetVacance;
 
     }
