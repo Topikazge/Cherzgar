@@ -5,5 +5,6 @@ using UnityEngine;
 public enum TypeStructure
 {
     TownHall,
-    ShoterBaracks
+    ShoterBaracks,
+    FarmVacance
 }

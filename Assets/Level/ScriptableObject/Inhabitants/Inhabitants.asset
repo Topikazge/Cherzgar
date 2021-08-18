@@ -15,3 +15,4 @@ MonoBehaviour:
   _beggar: {fileID: 5053515521090567250, guid: 44129b5ae136ff24ba37b97b9b218d34, type: 3}
   _commonResident: {fileID: 5264409548339540083, guid: 31057f5c7e96e2e4b98e281e2a61bc52, type: 3}
   _shooter: {fileID: 6532982368820907107, guid: e433929ec8c2f6c4d9ad5da7ddaebc23, type: 3}
+  _fermer: {fileID: 8419252459278784495, guid: 584268a48d70901499c833a28316516d, type: 3}
