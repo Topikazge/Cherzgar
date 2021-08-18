@@ -32,6 +32,15 @@ public class ReplacerInhabitants : MonoBehaviour
         Debug.Log("Произошел спавн");
     }
 
+    public void ReplaceInhabitants(InhabitantBase inhabitant, TypeInhabitant typeInhabitant)
+    {
+        Vector2 poinSpawn = inhabitant.transform.position;
+        InhabitantBase nextinhabitant;
+        nextinhabitant = _spawnerInhabitants.SpawnInhabitant(typeInhabitant);
+        Destroy(inhabitant.gameObject);
+        Replace(nextinhabitant, poinSpawn);
+    }
+
     private void Replace(InhabitantBase inhabitant, Vector2 point)
     {
         inhabitant.transform.position = point;

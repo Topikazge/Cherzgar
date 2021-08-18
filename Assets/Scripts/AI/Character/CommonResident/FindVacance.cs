@@ -13,10 +13,10 @@ public class FindVacance : ActionNode
 
     public override NodeResult Execute()
     {
-        ArcherBarracks[] vacance = GameObject.FindObjectsOfType<ArcherBarracks>();
+        StructureVacance[] vacance = GameObject.FindObjectsOfType<StructureVacance>();
         if (vacance.Length > 0)
         {
-            foreach (ArcherBarracks item in vacance)
+            foreach (StructureVacance item in vacance)
             {
                 if (item.CheckFreeVanace())
                 {

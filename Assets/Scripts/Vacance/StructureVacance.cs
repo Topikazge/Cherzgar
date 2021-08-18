@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PaymentHandler))]
-public class ArcherBarracks : MonoBehaviour, IFreeVacance
+public class StructureVacance : MonoBehaviour, IFreeVacance
 {
-    [SerializeField] private Vacance[] _archerVacances;
-
+    [SerializeField] private TypeInhabitant _typeVacance;
     [SerializeField] private int _priceArcher;
     [SerializeField] private int _countArcherForPay;
+    [SerializeField] private Vacance[] _archerVacances;
     private int _currentVacancy;
+
 
     private PaymentHandler _paymentHandler;
     private VacanceView _vacanceViewer;
@@ -53,7 +54,6 @@ public class ArcherBarracks : MonoBehaviour, IFreeVacance
         {
             _vacanceViewer.ViewVacance();
             _currentVacancy++;
-            Debug.Log("Вакансия создан. Колчество вакансий - " + _currentVacancy);
         }
     }
     private void RemoveVacancy()
@@ -62,7 +62,6 @@ public class ArcherBarracks : MonoBehaviour, IFreeVacance
         {
             _vacanceViewer.CloseVacance();
             _currentVacancy--;
-            Debug.Log("Вакансия удалена");
         }
     }
 
@@ -71,7 +70,7 @@ public class ArcherBarracks : MonoBehaviour, IFreeVacance
         if (_currentVacancy > 0)
         {
             RemoveVacancy();
-            _replacerInhabitants.AutoReplaceInhabitants(inhabitantBase);
-        }     
+            _replacerInhabitants.ReplaceInhabitants(inhabitantBase, _typeVacance);
+        }
     }
 }
