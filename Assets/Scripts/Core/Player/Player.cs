@@ -7,11 +7,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _radiosInteraction;
     [SerializeField] private LayerMask _interactLayer;
+    private PlayerCollisionHandler _collisionHandler;
 
     private Wallet _wallet;
     private void Start()
     {
         _wallet = GetComponent<Wallet>();
+        _collisionHandler = GetComponent<PlayerCollisionHandler>();
+        _collisionHandler.FinderCoin.Notification += AppCoin;
     }
 
     private void Update()
@@ -48,7 +51,7 @@ public class Player : MonoBehaviour
         transform.Translate(vector3);
     }
 
-    public void AppCoin(Coin coin)
+    private void AppCoin(Coin coin)
     {
         coin.App(_wallet);
     }

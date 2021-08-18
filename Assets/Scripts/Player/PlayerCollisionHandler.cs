@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
-    [SerializeField] private LayerMask _COinLayer;
+    private FinderComponentParametrs<Coin> _finderCoin;
     private Player _player;
+    
+    public FinderComponentParametrs<Coin> FinderCoin => _finderCoin;
+
+    private void Awake()
+    {
+        _finderCoin = new FinderComponentParametrs<Coin>();
+    }
 
     private void Start()
     {
         _player = GetComponent<Player>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Coin coin = collision.gameObject.GetComponent<Coin>();
-        if (coin != null)
-        {
-            Debug.Log(collision.gameObject.name);
-            _player.AppCoin(coin);
-        }
+        _finderCoin.Check(collision.gameObject);
     }
 }

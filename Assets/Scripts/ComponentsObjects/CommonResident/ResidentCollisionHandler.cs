@@ -9,7 +9,6 @@ public class ResidentCollisionHandler : MonoBehaviour
     private void Awake()
     {
         _vacanceCollisison = new FinderComponentParametrs<IFreeVacance>();
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

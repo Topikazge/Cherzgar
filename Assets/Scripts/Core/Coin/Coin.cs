@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
         {
             _rigidbody.gravityScale = 0;
             _collider.isTrigger = true;
-            _canAppPlayer = false;
+            _canAppPlayer = true;
         }
     }
 
@@ -31,9 +31,8 @@ public class Coin : MonoBehaviour
 
     public void App(Wallet wallet)
     {
-        if (_canAppPlayer && wallet.IsMaxCoin == false)
+        if (_canAppPlayer && (wallet.IsMaxCoin == false))
         {
-            StopAllCoroutines();
             wallet.AddCoin();
             Destroy(gameObject);
         }
