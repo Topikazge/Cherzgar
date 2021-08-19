@@ -6,5 +6,6 @@ public enum TypeStructure
 {
     TownHall,
     ShoterBaracks,
-    FarmVacance
+    FarmVacance,
+    Farm
 }

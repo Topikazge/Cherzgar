@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e32f8be6b435ddd43824df8eabfc1378, type: 3}
-  m_Name: Level2
+  m_Name: Level1
   m_EditorClassIdentifier: 
-  _structure: {fileID: 8792843306330418267, guid: e92878c9b502cd9448475c17a8a8884e, type: 3}
-  _price: 0
+  _structure: {fileID: 1437043907702767349, guid: f0ba7dc0f6ba73d4d91fb3bff727d31c, type: 3}
+  _price: 1

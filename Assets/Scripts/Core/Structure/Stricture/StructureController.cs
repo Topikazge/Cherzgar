@@ -61,10 +61,13 @@ public class StructureController : MonoBehaviour
     private void SetupSettingPayment(Structure structure)
     {
         PaymentHandler paymentHandler = structure.GetComponent<PaymentHandler>();
-        paymentHandler.PaymentCompleted += ImprovementPaid;
-        int nextLevel = (int)_levelStructure + 1;
-        int priceStructure = _factoryStructure.GetPrice((LevelStructure)nextLevel);
-        paymentHandler.SetPrice(priceStructure);
+        if (paymentHandler != null)
+        {
+            paymentHandler.PaymentCompleted += ImprovementPaid;
+            int nextLevel = (int)_levelStructure + 1;
+            int priceStructure = _factoryStructure.GetPrice((LevelStructure)nextLevel);
+            paymentHandler.SetPrice(priceStructure);
+        }
     }
 
     private void IncreaseCurrentLevelStructure()

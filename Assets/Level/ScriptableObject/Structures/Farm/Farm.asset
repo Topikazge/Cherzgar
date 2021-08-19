@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32f8be6b435ddd43824df8eabfc1378, type: 3}
-  m_Name: Level2
+  m_Script: {fileID: 11500000, guid: 92a6384f30f067f418dc084d22972abb, type: 3}
+  m_Name: Farm
   m_EditorClassIdentifier: 
-  _structure: {fileID: 8792843306330418267, guid: e92878c9b502cd9448475c17a8a8884e, type: 3}
-  _price: 0
+  _structures:
+  - {fileID: 11400000, guid: c7c2551bb3f18bf4bb906bf8dc064670, type: 2}
+  - {fileID: 11400000, guid: 2513c277e0f0e5c42b4345fb13d6136d, type: 2}
