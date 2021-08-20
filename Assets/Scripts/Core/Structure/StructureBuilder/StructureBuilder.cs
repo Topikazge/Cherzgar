@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class StructureController : MonoBehaviour
+public class StructureBuilder : MonoBehaviour
 {
     [SerializeField] private TypeStructure _typeBuildStructure;
     [Header("Parametras Locations")]
-    [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private Transform _locationStructure;
     [SerializeField] private GameObject _structureParent;
     private LevelStructure _levelStructure;
     private Structure _currentSctructure;
-    private PaymentHandler _paymentforBuilding;
     private FactoryStructures _factoryStructure;
 
     private void Start()
@@ -55,7 +54,7 @@ public class StructureController : MonoBehaviour
     private void SetupLocations(Structure structure)
     {
         structure.transform.SetParent(_structureParent.transform);
-        structure.transform.position = _spawnPoint.position;
+        structure.transform.position = _locationStructure.position;
     }
 
     private void SetupSettingPayment(Structure structure)
