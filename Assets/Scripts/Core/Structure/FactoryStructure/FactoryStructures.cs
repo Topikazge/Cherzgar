@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class FactoryStructure : MonoBehaviour
+public class FactoryStructures : MonoBehaviour
 {
-    private static FactoryStructure[] s_structures;
+    private static FactoryStructures[] s_structures;
     [SerializeField] private TypeStructure _typeFatory;
-    [SerializeField] private FactoryContainer _builder;
+    [SerializeField] private BuildingForConstruction _builder;
     private int _maxLevel;
 
     public TypeStructure TypeFatory
@@ -28,13 +28,13 @@ public class FactoryStructure : MonoBehaviour
         _maxLevel = _builder.MaxLevel;
     }
 
-    public static FactoryStructure GetFactory(TypeStructure typeStructure)
+    public static FactoryStructures GetFactory(TypeStructure typeStructure)
     {
         if (s_structures == null)
         {
-            s_structures = FindObjectsOfType<FactoryStructure>();
+            s_structures = FindObjectsOfType<FactoryStructures>();
         }
-        foreach (FactoryStructure structure in s_structures)
+        foreach (FactoryStructures structure in s_structures)
         {
             if (structure.TypeFatory == typeStructure)
             {

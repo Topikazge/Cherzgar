@@ -9,11 +9,11 @@ public class StructureController : MonoBehaviour
     private LevelStructure _levelStructure;
     private Structure _currentSctructure;
     private PaymentHandler _paymentforBuilding;
-    private FactoryStructure _factoryStructure;
+    private FactoryStructures _factoryStructure;
 
     private void Start()
     {
-        _factoryStructure = FactoryStructure.GetFactory(_typeBuildStructure);
+        _factoryStructure = FactoryStructures.GetFactory(_typeBuildStructure);
         _levelStructure = LevelStructure.One;
         SpawnFirstLevel();
     }
