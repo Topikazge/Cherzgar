@@ -16,11 +16,6 @@ public class FinderComponentParametrs<T>
     public void Find(GameObject target)
     {
         Find(Notification, target);
-        /*  T component = target.GetComponent<T>();
-          if (component != null)
-          {
-              Notification?.Invoke(component);
-          }*/
     }
 
     public void AddSubscriber(Action<T> subscriber)
