@@ -6,7 +6,7 @@ public class RebelGalaxy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        InhabitantBase commonResident = collision.gameObject.GetComponent<CommonResident>();
+        UnitBase commonResident = collision.gameObject.GetComponent<CommonResident>();
         if (commonResident != null)
         {
             

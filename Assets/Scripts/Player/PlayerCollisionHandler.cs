@@ -21,6 +21,6 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _finderCoin.Check(collision.gameObject);
+        _finderCoin.Find(collision.gameObject);
     }
 }

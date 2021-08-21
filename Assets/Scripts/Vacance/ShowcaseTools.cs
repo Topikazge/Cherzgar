@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Vacance : MonoBehaviour
+public class ShowcaseTools : MonoBehaviour
 {
-    public void Open()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    public void Close()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

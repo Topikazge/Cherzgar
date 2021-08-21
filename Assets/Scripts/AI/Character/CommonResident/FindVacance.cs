@@ -13,12 +13,12 @@ public class FindVacance : ActionNode
 
     public override NodeResult Execute()
     {
-        StructureVacance[] vacance = GameObject.FindObjectsOfType<StructureVacance>();
+        ShopTools[] vacance = GameObject.FindObjectsOfType<ShopTools>();
         if (vacance.Length > 0)
         {
-            foreach (StructureVacance item in vacance)
+            foreach (ShopTools item in vacance)
             {
-                if (item.CheckFreeVanace())
+                if (item.TryGetTool())
                 {
                     _target.Object = item.gameObject;
                     return NodeResult.Success;

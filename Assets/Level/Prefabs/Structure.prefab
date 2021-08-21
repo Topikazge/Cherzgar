@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeBuildStructure: 0
-  _spawnPoint: {fileID: 6551493876457126897}
+  _locationStructure: {fileID: 6551493876457126897}
   _structureParent: {fileID: 6551493877726002513}
 --- !u!1 &6551493876457126902
 GameObject:
