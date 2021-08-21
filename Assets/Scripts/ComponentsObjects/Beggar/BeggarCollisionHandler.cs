@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BeggarCollisionHandler : MonoBehaviour
 {
-    public FinderComponentParametrs<Coin> _coinCollision;
+    private FinderComponentParametrs<Coin> _coinCollision;
     public FinderComponentParametrs<Coin> CoinCollision => _coinCollision;
 
     private void Awake()
@@ -14,6 +14,6 @@ public class BeggarCollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CoinCollision.Check(collision.gameObject);
+        CoinCollision.Find(collision.gameObject);
     }
 }

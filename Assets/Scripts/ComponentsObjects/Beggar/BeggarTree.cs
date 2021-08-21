@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeggarTree : InhabitantBase
+public class BeggarTree : UnitBase
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _distanceCheckCoins;
@@ -11,15 +11,15 @@ public class BeggarTree : InhabitantBase
 
     private BeggarCollisionHandler _collision;
 
-    private ReplacerInhabitants _switcherInhabitants;
+    private ReplacerUnits _switcherUnits;
 
     private void Start()
     {
-        CreteBehaviorTree();
+        CreateBehaviorTree();
         _collision = GetComponent<BeggarCollisionHandler>();
-        _collision.CoinCollision.Notification += AppCoin;
+        _collision.CoinCollision.AddSubscriber(AppCoin);
 
-        _switcherInhabitants = FindObjectOfType<ReplacerInhabitants>();
+        _switcherUnits = FindObjectOfType<ReplacerUnits>();
     }
 
     private void Update()
@@ -27,7 +27,7 @@ public class BeggarTree : InhabitantBase
         _behaviorTree.Tick();
     }
 
-    private void CreteBehaviorTree()
+    private void CreateBehaviorTree()
     {
         _behaviorTree = new BehaviorTree(gameObject);
 
@@ -62,7 +62,7 @@ public class BeggarTree : InhabitantBase
 
     private void AppCoin(Coin coin)
     {
-        _switcherInhabitants.AutoReplaceInhabitants(this);
+        _switcherUnits.AutoReplaceUnits(this);
     }
 
     private void OnDrawGizmos()

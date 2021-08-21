@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ResidentCollisionHandler : MonoBehaviour
 {
-    private FinderComponentParametrs<IFreeVacance> _vacanceCollisison;
-    public FinderComponentParametrs<IFreeVacance> VacanceCollisison=> _vacanceCollisison;
+    private FinderComponentParametrs<IFreeTool> _vacanceCollisison;
+    public FinderComponentParametrs<IFreeTool> VacanceCollisison=> _vacanceCollisison;
     private void Awake()
     {
-        _vacanceCollisison = new FinderComponentParametrs<IFreeVacance>();
+        _vacanceCollisison = new FinderComponentParametrs<IFreeTool>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _vacanceCollisison.Check(collision.gameObject);
+        _vacanceCollisison.Find(collision.gameObject);
     }
 }

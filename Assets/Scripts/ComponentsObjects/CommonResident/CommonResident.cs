@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonResident : InhabitantBase
+public class CommonResident : UnitBase
 {
     [SerializeField] private float _speed;
     private BehaviorTree _behaviorTree;
@@ -18,7 +18,7 @@ public class CommonResident : InhabitantBase
 
         _collisionHandler = GetComponent<ResidentCollisionHandler>();
 
-        _collisionHandler.VacanceCollisison.Notification += GetVacance;
+        _collisionHandler.VacanceCollisison.AddSubscriber(GetVacance);
 
     }
 
@@ -27,10 +27,10 @@ public class CommonResident : InhabitantBase
         _behaviorTree.Tick();
     }
 
-    public void GetVacance(IFreeVacance freeVacance)
+    public void GetVacance(IFreeTool freeVacance)
     {
-        if (freeVacance.CheckFreeVanace())
-            freeVacance.GetVacance(this);
+        if (freeVacance.TryGetTool())
+            freeVacance.GetTool(this);
     }
     public void AppCoin(Coin coin)
     {

@@ -6,22 +6,33 @@ public class Coin : MonoBehaviour
 {
     private bool _canAppPlayer = true;
 
+    FinderComponent<Ground> _finderComponent;
+
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
 
     private void Start()
     {
+        _finderComponent = new FinderComponent<Ground>();
+        _finderComponent.AddSubscriber(AllowApp); 
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Ground Ground))
+        _finderComponent.TryFind(collision.gameObject);
+      /*  if (collision.gameObject.TryGetComponent(out Ground Ground))
         {
-            _rigidbody.gravityScale = 0;
-            _collider.isTrigger = true;
-            _canAppPlayer = true;
-        }
+          
+        }*/
+    }
+
+    private void AllowApp()
+    {
+        _rigidbody.gravityScale = 0;
+        _collider.isTrigger = true;
+        _canAppPlayer = true;
     }
 
     public void Drop()

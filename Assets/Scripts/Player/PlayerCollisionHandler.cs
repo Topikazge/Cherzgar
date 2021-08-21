@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerCollisionHandler : MonoBehaviour
 {
     private FinderComponentParametrs<Coin> _finderCoin;
-    private Player _player;
     
     public FinderComponentParametrs<Coin> FinderCoin => _finderCoin;
 
@@ -14,13 +13,8 @@ public class PlayerCollisionHandler : MonoBehaviour
         _finderCoin = new FinderComponentParametrs<Coin>();
     }
 
-    private void Start()
-    {
-        _player = GetComponent<Player>();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _finderCoin.Check(collision.gameObject);
+        _finderCoin.Find(collision.gameObject);
     }
 }

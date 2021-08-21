@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     {
         _wallet = GetComponent<Wallet>();
         _collisionHandler = GetComponent<PlayerCollisionHandler>();
-        _collisionHandler.FinderCoin.Notification += AppCoin;
+        _collisionHandler.FinderCoin.AddSubscriber(AppCoin);
     }
 
     private void Update()
